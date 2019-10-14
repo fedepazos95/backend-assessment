@@ -1,0 +1,31 @@
+{
+  "name": "backend-asessment",
+  "version": "1.0.0",
+  "description": "Sopra Steria Backend Assessment",
+  "main": "src/app.js",
+  "repository": "git@github.com:fedepazos95/backend-asessment.git",
+  "author": "Federico <fede.pazos95@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "body-parser": "^1.19.0",
+    "celebrate": "^10.0.1",
+    "dotenv": "^8.1.0",
+    "express": "^4.17.1",
+    "express-jwt": "^5.3.1",
+    "jsonwebtoken": "^8.5.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.18",
+    "eslint": "^6.5.1",
+    "eslint-config-prettier": "^6.4.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "husky": "^3.0.9",
+    "jest": "^24.9.0",
+    "nodemon": "^1.19.3",
+    "prettier": "^1.18.2",
+    "pretty-quick": "^2.0.0",
+    "sinon": "^7.5.0",
+    "supertest": "^4.0.2"
+  }
+}
