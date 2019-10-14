@@ -1,6 +1,7 @@
 const config = require('../config');
 const routes = require('../routes');
 const bodyParser = require('body-parser');
+const { errors } = require('celebrate');
 
 const expressLoader = async app => {
 
@@ -16,6 +17,8 @@ const expressLoader = async app => {
     err['status'] = 404;
     next(err);
   });
+  // Celebrate errors handler
+  app.use(errors());
   // Error handlers
   app.use((err, req, res, next) => {
     /**
