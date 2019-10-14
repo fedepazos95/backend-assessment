@@ -7,15 +7,15 @@ const config = require('../config');
  * @param {object} user User data
  */
 const generateToken = (user) => {
-  //Set expiration to 1 hour
-  const exp = Math.floor(Date.now() / 1000) + (60 * 60)
+  //Set expiration to 30 min
+  const exp = Math.floor(Date.now() / 1000) + (60 * 30)
 
   return jwt.sign(
     {
       _id: user.id,
       name: user.name,
       role: user.role,
-      // exp
+      exp
     },
     config.secretKey
   );

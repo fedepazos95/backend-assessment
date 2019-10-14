@@ -17,7 +17,7 @@ describe('Auth middleware', () => {
     const res = await request(app)
       .get('/api/policies/7b624ed3-00d5-4c1b-9ab8-c265067ef58b/user')
       .set('Authorization', 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJhM2I4ZDQyNS0yYjYwLTRhZDctYmVjYy1iZWRmMmVmODYwYmQiLCJuYW1lIjoiQmFybmV0dCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNTcxMDcxMTk4fQ.-9xoavt1YoIhXXN1FT7qUnfBp3ZR2Stq15KAvfxqvG8');
-      expect(res.statusCode).toEqual(401);
+      expect(res.statusCode).toEqual(403);
       expect(res.body.message).toEqual('User is not authorized to perform this request.');
   });
 
