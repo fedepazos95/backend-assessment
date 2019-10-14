@@ -34,6 +34,7 @@ describe('Users router', () => {
       .post('/api/users/authenticate')
       .send({ email: 'fail@fail.com' })
       .set('Content-Type', 'application/json');
+      console.log(res);
       expect(res.statusCode).toEqual(500);
       expect(res.body.message).toEqual('User not found');
   });
