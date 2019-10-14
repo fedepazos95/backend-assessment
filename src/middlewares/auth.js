@@ -12,7 +12,7 @@ const isAuthenticated = (roles = []) => {
     (req, res, next) => {
       if (roles.length && !roles.includes(req.user.role)) {
         return res
-          .status(401)
+          .status(403)
           .json({
             message: 'User is not authorized to perform this request.'
           });

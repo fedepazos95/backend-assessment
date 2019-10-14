@@ -44,8 +44,128 @@ const getUserPolicies = async (req, res, next) => {
 
 module.exports = (app) => {
   app.use('/users', route);
+  
+  /**
+   * @swagger
+   * /users:
+   *    get:
+   *      tags:
+   *      - users
+   *      description: This should return all users
+   *      responses:
+   *        200:
+   *          description: OK
+   *          content:
+   *            application/json:
+   *              schema:
+   *                type: array
+   *                items:
+   *                 "$ref": "#/definitions/User"
+   *        401:
+   *          "$ref": "#/components/responses/Unauthenticated"
+   *        403:
+   *          "$ref": "#/components/responses/Unauthorized"
+   *      security:
+   *      - bearerAuth: []
+   */
   route.get('/', auth.isAuthenticated([roles.user, roles.admin]), getUsers);
+
+  /**
+   * @swagger
+   * /users/authenticate:
+   *    post:
+   *      tags:
+   *      - users
+   *      description: This should return authentication token
+   *      requestBody:
+   *        content:
+   *          application/json:
+   *            schema:
+   *              type: object
+   *              properties:
+   *                email:
+   *                  type: string
+   *                  required: true
+   *            examples:
+   *              Admin:
+   *                value:
+   *                  email: whitleyblankenship@quotezart.com
+   *              User:
+   *                value:
+   *                  email: barnettblankenship@quotezart.com
+   *      responses:
+   *        200:
+   *          description: OK
+   *          content:
+   *            application/json:
+   *              schema:
+   *                "$ref": "#/definitions/Authentication"
+   *        401:
+   *          "$ref": "#/components/responses/Unauthenticated"
+   *        403:
+   *          "$ref": "#/components/responses/Unauthorized"
+   *      security:
+   *      - bearerAuth: []
+   */
   route.post('/authenticate', celebrate({ body: Joi.object({ email: Joi.string().required() }) }), authenticate);
+
+  /**
+   * @swagger
+   * /users/{id}:
+   *    get:
+   *      tags:
+   *      - users
+   *      description: This should return user data
+   *      parameters:
+   *        - name: id
+   *          in: path
+   *          description: User ID
+   *          required: true
+   *          example: a0ece5db-cd14-4f21-812f-966633e7be86
+   *      responses:
+   *        200:
+   *          description: OK
+   *          content:
+   *            application/json:
+   *              schema:
+   *                "$ref": "#/definitions/User"
+   *        401:
+   *          "$ref": "#/components/responses/Unauthenticated"
+   *        403:
+   *          "$ref": "#/components/responses/Unauthorized"
+   *      security:
+   *      - bearerAuth: []
+   */
   route.get('/:id', auth.isAuthenticated([roles.user, roles.admin]), getById);
+
+  /**
+   * @swagger
+   * /users/{id}/policies:
+   *    get:
+   *      tags:
+   *      - users
+   *      description: This should return user's policies
+   *      parameters:
+   *        - name: id
+   *          in: path
+   *          description: User ID
+   *          required: true
+   *          example: a0ece5db-cd14-4f21-812f-966633e7be86
+   *      responses:
+   *        200:
+   *          description: OK
+   *          content:
+   *            application/json:
+   *              schema:
+   *                type: array
+   *                items:
+   *                 "$ref": "#/definitions/Policy"
+   *        401:
+   *          "$ref": "#/components/responses/Unauthenticated"
+   *        403:
+   *          "$ref": "#/components/responses/Unauthorized"
+   *      security:
+   *      - bearerAuth: []
+   */
   route.get('/:id/policies', auth.isAuthenticated(roles.admin), getUserPolicies);
 }
