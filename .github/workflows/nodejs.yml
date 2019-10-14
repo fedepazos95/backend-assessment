@@ -1,4 +1,4 @@
-name: Backend Asessment CI
+name: Backend Assessment CI
 
 on: [push]
 
