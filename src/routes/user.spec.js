@@ -23,7 +23,6 @@ describe('Users router', () => {
       .post('/api/users/authenticate')
       .send({ email: 'barnettblankenship@quotezart.com' })
       .set('Content-Type', 'application/json');
-    console.log(res);
     expect(res.statusCode).toEqual(200);
     expect(typeof (res.body)).toBe('object');
     expect(res.body).toHaveProperty('user');
