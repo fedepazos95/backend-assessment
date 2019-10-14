@@ -2,11 +2,14 @@ const config = require('../config');
 const routes = require('../routes');
 const bodyParser = require('body-parser');
 const { errors } = require('celebrate');
+const cors = require('cors');
 
 const expressLoader = async ({ app }) => {
 
   // Health Check endpoint
   app.get('/status', (req, res) => res.status(200).send({ message: 'Server running' }));
+  // Cors 
+  app.use(cors());
   // Middleware to transform req.body into json
   app.use(bodyParser.json());
   // Load API routes
