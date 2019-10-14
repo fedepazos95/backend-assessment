@@ -6,6 +6,10 @@
   "repository": "git@github.com:fedepazos95/backend-asessment.git",
   "author": "Federico <fede.pazos95@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "dev": "nodemon src/app.js",
+    "test": "jest --maxWorkers=1 --coverage"
+  },
   "dependencies": {
     "axios": "^0.19.0",
     "body-parser": "^1.19.0",
