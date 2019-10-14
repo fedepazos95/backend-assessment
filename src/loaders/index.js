@@ -1,10 +1,11 @@
 const expressLoader = require('./express');
+const swaggerLoader = require('./swagger');
 
-const loaders = async expressApp => {
-  await expressLoader(expressApp);
-  console.log('Express Initialized');
+const loaders = async ({ expressApp }) => {
+  await swaggerLoader({ app: expressApp });
+  console.log('Swagger loaded');
+  await expressLoader({ app: expressApp });
+  console.log('Express loaded');
 }
 
-module.exports = {
-  init: loaders
-}
+module.exports = loaders;

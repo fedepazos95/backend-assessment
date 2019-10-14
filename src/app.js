@@ -5,7 +5,7 @@ const loaders = require("./loaders");
 const app = express();
 
 (async function (app) {
-  await loaders.init(app);
+  await loaders({ expressApp: app });
   return app;
 })(app);
 

@@ -3,7 +3,7 @@ const routes = require('../routes');
 const bodyParser = require('body-parser');
 const { errors } = require('celebrate');
 
-const expressLoader = async app => {
+const expressLoader = async ({ app }) => {
 
   // Health Check endpoint
   app.get('/status', (req, res) => res.status(200).send({ message: 'Server running' }));
