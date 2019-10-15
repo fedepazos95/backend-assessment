@@ -1,1 +1,1 @@
-![](https://github.com/fedepazos95/backend-assessment/workflows/Backend%20Assessment%20CI/badge.svg)
+![](https://travis-ci.org/fedepazos95/backend-assessment.svg?branch=master)
