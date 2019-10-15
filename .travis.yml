@@ -5,7 +5,11 @@ cache:
   directories:
     - "node_modules"
 
-install:
-  - yarn install
-script:
-  - yarn run test
+jobs:
+  include:
+    - stage: Installing dependencies...
+      script: yarn install
+    - stage: Unit Tests
+      script: yarn run test
+    - stage: Produce Coverage
+      script: jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
