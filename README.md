@@ -1,1 +1,2 @@
 ![](https://travis-ci.org/fedepazos95/backend-assessment.svg?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/fedepazos95/backend-assessment/badge.svg?branch=develop)](https://coveralls.io/github/fedepazos95/backend-assessment?branch=develop)
