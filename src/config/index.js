@@ -15,5 +15,6 @@ module.exports = {
   roles: {
     user: 'user',
     admin: 'admin'
-  }
+  },
+  testToken: process.env.TEST_TOKEN
 }
