@@ -2,6 +2,7 @@
 [![Coveralls][coveralls-shield]][coveralls-url]
 [![Maintainability][maintainability-shield]][maintainability-url]
 [![Contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/fedepazos95/backend-assessment/issues)
+![](https://david-dm.org/fedepazos95/backend-assessment.svg)
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 <br />
