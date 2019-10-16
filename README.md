@@ -30,6 +30,7 @@
 * [Usage](#usage)
 * [Testing](#testing)
 * [Contact](#contact)
+* [License](#license)
 
 
 ## About The Project
@@ -103,7 +104,15 @@ TEST_TOKEN=*YOUR-TOKEN*
 yarn test
 ```
 
+## Contact
+- [LinkedIn][linkedin-url]
+- [Email][mailto]
 
+## License
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+
+[mailto]: mailto:fede.pazos95@gmail.com
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/federicopazos/
 [js-logo]: docs/images/js.png
