@@ -24,21 +24,13 @@
 </p>
 
 
-
-<!-- TABLE OF CONTENTS -->
 ## Table of Contents
-
 * [About the Project](#about-the-project)
-  * [Built With](#built-with)
-* [Getting Started](#getting-started)
-  * [Prerequisites](#prerequisites)
-  * [Installation](#installation)
+* [Running the Web API](#running-the-web-api)
 * [Usage](#usage)
-* [Roadmap](#roadmap)
-* [Contributing](#contributing)
-* [License](#license)
+* [Testing](#testing)
 * [Contact](#contact)
-* [Acknowledgements](#acknowledgements)
+
 
 ## About The Project
 This is a Web API that exposes some services related to insurance policies and company clientes, with some added constraints:
@@ -51,6 +43,7 @@ This is a Web API that exposes some services related to insurance policies and c
 	 - Get User data filtered by name.
 	 - Get the list of Policies linked to a User.
    - Get the User linked to a Policy.
+
 
 ## Running the Web API
 To get a local copy up and running follow these simple steps.
@@ -75,68 +68,46 @@ yarn dev
 ```
 
 
-
-<!-- USAGE EXAMPLES -->
 ## Usage
+To start using the Web API you can go to [http://localhost:3000/api/docs](http://localhost:3000) to see the Open Api specification and test it through Swagger.
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+[![Swagger Screenshot][swagger-screenshot]](https://github.com/fedepazos95/backend-assessment)
 
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-
-
-<!-- ROADMAP -->
-## Roadmap
-
-See the [open issues](https://github.com/fedepazos95/backend-assessment/issues) for a list of proposed features (and known issues).
+The Swagger is already configured with some ids to start using it asap! 
 
 
+>*The only pre-requirement is to authenticate with an email to get a Token and use it in the **Authorize** button.*
 
-<!-- CONTRIBUTING -->
-## Contributing
-
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+>*Also there is a [Postman Collection](https://www.getpostman.com/collections/a12bdde76a4ebac5ea1c) that contains an example of every resource.*
 
 
+## Testing
+To run all the tests locally, you need to setup a new environment variable. That is because one of the tests requires an User Token to fail trying to request info available only for admins.
 
-<!-- LICENSE -->
-## License
+To do this, follow:
 
-Distributed under the MIT License. See `LICENSE` for more information.
+1. Start the development server
 
-
-
-<!-- CONTACT -->
-## Contact
-
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - fede.pazos95@gmail.com
-
-Project Link: [https://github.com/fedepazos95/backend-assessment](https://github.com/fedepazos95/backend-assessment)
-
-
-
-<!-- ACKNOWLEDGEMENTS -->
-## Acknowledgements
-
-* []()
-* []()
-* []()
+2. Authenticate with a User, the fatest way is running:
+```sh
+curl -d '{"email":"barnettblankenship@quotezart.com"}' -H "Content-Type: application/json" -X POST http://localhost:3000/api/users/authenticate
+#But also you can do it through Swagger or Postman.
+```
+3. Use the received token in your **.env** file:
+```sh
+TEST_TOKEN=*YOUR-TOKEN*
+#Be aware that the token will expires in 30mins.
+```
+4. Run the tests:
+```sh
+yarn test
+```
 
 
-
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/federicopazos/
-[js-logo]: images/js.png
+[js-logo]: docs/images/js.png
+[swagger-screenshot]: docs/images/swagger.png
 [travis-url]: https://travis-ci.org/fedepazos95/backend-assessment.svg?branch=master
 [coveralls-shield]: https://coveralls.io/repos/github/fedepazos95/backend-assessment/badge.svg?branch=develop
 [coveralls-url]: https://coveralls.io/github/fedepazos95/backend-assessment?branch=develop

@@ -8,7 +8,7 @@ const options = {
   swaggerDefinition: {
     openapi: '3.0.0',
     info: {
-      title: 'Backend Assessment - Sopra Steria',
+      title: 'Backend Assessment',
       version: '1.0.0',
       description: 'API to manage Clients and their respectives Policies',
       contact: {
