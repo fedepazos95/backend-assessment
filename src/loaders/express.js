@@ -1,6 +1,6 @@
+const express = require('express');
 const config = require('../config');
 const routes = require('../routes');
-const bodyParser = require('body-parser');
 const { errors } = require('celebrate');
 const cors = require('cors');
 
@@ -11,7 +11,7 @@ const expressLoader = async ({ app }) => {
   // Cors 
   app.use(cors());
   // Middleware to transform req.body into json
-  app.use(bodyParser.json());
+  app.use(express.json());
   // Load API routes
   app.use(config.api.prefix, routes());
   // Catch 404 and forward to error handler

@@ -1,11 +1,14 @@
+const { Router } = require('express');
+const route = Router();
 const swaggerUi = require('swagger-ui-express');
 const swaggerJsdoc = require('swagger-jsdoc');
+const config = require('../config');
 
 const options = {
   swaggerDefinition: {
     openapi: '3.0.0',
     info: {
-      title: 'Backend Assessment - Sopra Steria',
+      title: 'Backend Assessment',
       version: '1.0.0',
       description: 'API to manage Clients and their respectives Policies',
       contact: {
@@ -14,7 +17,7 @@ const options = {
     },
     servers: [
       {
-        url: 'http://localhost:3000/api',
+        url: `http://localhost:${config.port}/api`,
         description: 'Development server'
       }
     ],
@@ -133,8 +136,7 @@ const options = {
 
 const specs = swaggerJsdoc(options);
 
-const swaggerLoader = async ({ app }) => {
-  // API Docs
-  app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
+module.exports = (app) => {
+  app.use('/docs', route);
+  route.use('/', swaggerUi.serve, swaggerUi.setup(specs));
 }
-module.exports = swaggerLoader;

@@ -11,7 +11,7 @@ module.exports = {
   api: {
     prefix: '/api',
   },
-  secretKey: 'This is a secret key. Sopra Steria Backend Assessment.',
+  secretKey: 'This is a secret key. Backend Assessment.',
   roles: {
     user: 'user',
     admin: 'admin'

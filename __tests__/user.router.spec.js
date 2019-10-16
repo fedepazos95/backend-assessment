@@ -6,11 +6,11 @@ let app, authMiddleware;
 describe('Users router', () => {
   beforeEach(() => {
     // mocks auth middleware
-    authMiddleware = require('../middlewares/auth');
+    authMiddleware = require('../src/middlewares/auth');
     sinon.stub(authMiddleware, 'isAuthenticated').callsFake(() => {
       return (req, res, next) => { return next(); }
     })
-    app = require('../app');
+    app = require('../src/app');
   });
 
   afterEach(() => {
