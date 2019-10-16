@@ -1,3 +1,5 @@
+const { Router } = require('express');
+const route = Router();
 const swaggerUi = require('swagger-ui-express');
 const swaggerJsdoc = require('swagger-jsdoc');
 const config = require('../config');
@@ -134,8 +136,7 @@ const options = {
 
 const specs = swaggerJsdoc(options);
 
-const swaggerLoader = async ({ app }) => {
-  // API Docs
-  app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
+module.exports = (app) => {
+  app.use('/docs', route);
+  route.use('/', swaggerUi.serve, swaggerUi.setup(specs));
 }
-module.exports = swaggerLoader;
