@@ -7,7 +7,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/fedepazos95/backend-assessment">
-    <img src="images/js.png" alt="Logo" width="100" height="100">
+    <img src="docs/images/js.png" alt="Logo" width="100" height="100">
   </a>
 
   <h2 align="center">Node.JS Backend Assessment</h2>
