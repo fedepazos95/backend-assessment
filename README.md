@@ -16,8 +16,8 @@
     <a href="https://github.com/fedepazos95/backend-assessment"><strong>Explore the docs »</strong></a>
     <br />
     <small>
-      <a href="https://github.com/fedepazos95/backend-assessment">View Demo</a>
-      ·
+      <!-- <a href="https://github.com/fedepazos95/backend-assessment">View Demo</a>
+      · -->
       <a href="https://github.com/fedepazos95/backend-assessment/issues">Report Bug</a>
     </small>
   </p>
