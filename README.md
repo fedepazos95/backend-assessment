@@ -40,12 +40,7 @@
 * [Contact](#contact)
 * [Acknowledgements](#acknowledgements)
 
-
-
-<!-- ABOUT THE PROJECT -->
 ## About The Project
-
-<!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
 This is a Web API that exposes some services related to insurance policies and company clientes, with some added constraints:
 
  - Users can only access to:
@@ -57,42 +52,26 @@ This is a Web API that exposes some services related to insurance policies and c
 	 - Get the list of Policies linked to a User.
    - Get the User linked to a Policy.
 
-
-
-**To avoid retyping too much info. Do a search and replace with your text editor for the following:**
-`fedepazos95`, `backend-assessment`, `twitter_handle`, `fede.pazos95@gmail.com`
-
-
-### Built With
-
-* []()
-* []()
-* []()
-
-
-
-<!-- GETTING STARTED -->
-## Getting Started
-
+## Running the Web API
 To get a local copy up and running follow these simple steps.
 
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-```sh
-npm install npm@latest -g
-```
-
-### Installation
- 
-1. Clone the backend-assessment
+1. Download or clone the project code
 ```sh
 git clone https:://github.com/fedepazos95/backend-assessment.git
 ```
-2. Install NPM packages
+2. Install project dependencies
 ```sh
-npm install
+yarn #or npm i
+```
+3. Then you need to set some environment variables, first create a **.env** file in the root folder and set the following:
+```sh
+PORT=3000 #or any other
+USERS_URL=http://www.mocky.io/v2/5808862710000087232b75ac
+POLICIES_URL=http://www.mocky.io/v2/580891a4100000e8242b75c5
+```
+4. Start the development server by running:
+```sh
+yarn dev
 ```
 
 
