@@ -7,23 +7,19 @@
 <br />
 <p align="center">
   <a href="https://github.com/fedepazos95/backend-assessment">
-    <img src="images/js.png" alt="Logo" width="80" height="80">
+    <img src="images/js.png" alt="Logo" width="100" height="100">
   </a>
 
-  <h3 align="center">Backend Assessment</h3>
+  <h2 align="center">Node.JS Backend Assessment</h2>
 
   <p align="center">
-    This is a backend assessment.
-    It is a Rest API that lists clients and their policies.
-    <br />
     <a href="https://github.com/fedepazos95/backend-assessment"><strong>Explore the docs »</strong></a>
     <br />
-    <br />
-    <a href="https://github.com/fedepazos95/backend-assessment">View Demo</a>
-    ·
-    <a href="https://github.com/fedepazos95/backend-assessment/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/fedepazos95/backend-assessment/issues">Request Feature</a>
+    <small>
+      <a href="https://github.com/fedepazos95/backend-assessment">View Demo</a>
+      ·
+      <a href="https://github.com/fedepazos95/backend-assessment/issues">Report Bug</a>
+    </small>
   </p>
 </p>
 
@@ -49,9 +45,20 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+<!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
+This is a Web API that exposes some services related to insurance policies and company clientes, with some added constraints:
 
-Here's a blank template to get started:
+ - Users can only access to:
+	 - Get User data by id.
+	 - Get User data filtered by name.
+ - Admins can only access to:
+	 - Get User data by id.
+	 - Get User data filtered by name.
+	 - Get the list of Policies linked to a User.
+   - Get the User linked to a Policy.
+
+
+
 **To avoid retyping too much info. Do a search and replace with your text editor for the following:**
 `fedepazos95`, `backend-assessment`, `twitter_handle`, `fede.pazos95@gmail.com`
 
