@@ -52,7 +52,7 @@ To get a local copy up and running follow these simple steps.
 
 1. Download or clone the project code
 ```sh
-git clone https:://github.com/fedepazos95/backend-assessment.git
+git clone https://github.com/fedepazos95/backend-assessment.git
 ```
 2. Install project dependencies
 ```sh
